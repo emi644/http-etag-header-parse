@@ -43,3 +43,10 @@ The deliberate trade-off: the parser rejects unquoted token etags and `obs-text`
 ## Edge you will hit
 
 The `W/` prefix is case-sensitive. `w/"v1"` is rejected as `null`, not parsed as weak. If your client sends lowercase, that is a protocol error and this library will not paper over it.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
