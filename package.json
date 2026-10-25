@@ -1,6 +1,6 @@
 {
   "name": "http-etag-header-parse",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Parses and compares entity-tag values, handling weak (W/) prefixes, quoted-string syntax, and If-Match/If-None-Match validation rules.",
   "type": "module",
   "main": "src/index.js",
